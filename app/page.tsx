@@ -1,113 +1,177 @@
-import Image from "next/image";
+"use client"
+import { useRef, useState } from 'react';
+import "./globals.css";
 
-export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+
+const CourseCard1 = () => (
+  <div className="course-card-wrapper">
+    <div className="course-card1">
+      <div className="color-strip" />
+      <div className="card-content1">
+        <div className="gradient-bar1" />
+        <h3 className="card-title">Introduction to programming</h3>
+        <p className="card-detail1">Beginner</p>
+        <div className="card-description">
+          This course covers the most basic concepts in programming using Solidity as an example.
+        </div>
+        <div className='progress-bars-container1'>
+        <div className="progress-bar1">
+        <div className='time'></div>
+        <div className="course-duration">36 Hour</div></div>
+        <div className="progress-bar2">
+        <div className='book'></div>
+        <div className="course-count">5 Course</div></div>
+        <div className="progress-bar3">
+          <div className="progress-indicator"></div>
+          <div className="progress-text">45% COMPLETED</div>
         </div>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
       </div>
+    </div>
+  </div>
+);
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+const CourseCard2 = () => (
+  <div className="course-card-wrapper">
+    <div className="course-card2">
+      <div className="color-strip" />
+      <div className="card-content2">
+        <h3 className="card-title">Moonshot 2023 Summer Hackathon</h3>
+        <p className="card-detail1">All Tracks</p>
+        <p className="card-detail2">Solidity</p>
+        <p className="card-detail2">ZK</p>
+        <div className='card-action'>
+        <div className="card-action1">Signup</div>
+        <div className="card-date-range">4/15 - 6/15</div>
+        <div className="card-divider"><hr className='hr1' /></div>
+        <div className='dived'></div>
+        <div className="card-action1">Event</div>
+        <div className="card-date-range">6/15 - 7/15</div>
+        <div className="card-divider"><hr className='hr1' /></div>
+        <div className='dived'></div>
+        <div className="card-action1">Grant size</div>
+        <div className="card-date-range">200K</div>
+        <div className="card-divider"><hr className='hr1' /></div>
+        </div>
       </div>
-    </main>
+    </div>
+  </div>
+);
+
+
+const CourseCard3 = () => (
+  <div className="course-card-wrapper">
+    <div className="course-card3">
+      <div className="color-strip" />
+      <div className="card-content3">
+        <div className="gradient-bar2" />
+        <h3 className="card-title">Web 3.0 Programming Basics</h3>
+        <p className="card-detail1">Beginner</p>
+        <div className="card-description">
+          Basic concepts in programming of Solidity. Topics include: variables, functions, flow control, error handling, data structure.
+        </div>
+        <div className='progress-bars-container2'>
+        <div className="progress-bar1">
+        <div className='time'></div>
+        <div className="course-duration">36 Hour</div></div>
+        <div className="progress-bar2">
+        <div className='book'></div>
+        <div className="course-count">5 Course</div></div>
+      </div>
+      </div>
+    </div>
+  </div>
+);
+
+
+const CourseCard4 = () => (
+  <div className="course-card-wrapper">
+    <div className="course-card4">
+      <div className="color-strip" />
+      <div className="card-content4">
+        <div className="gradient-bar3" />
+        <h3 className="card-title4">What is Bitcoin</h3>
+        <div className='progress-bars-container4'>
+        <div className="progress-bar1">
+        <div className='time'></div>
+        <div className="course-duration">36 Hour</div></div></div>
+      </div>
+    </div>
+  </div>
+);
+
+
+export default function Home() {
+  const scrollContainerRef = useRef(null);
+  const [isAtEnd, setIsAtEnd] = useState(false);
+  const [isAtStart, setIsAtStart] = useState(true);
+  const [showTitle, setShowTitle] = useState(true);
+  const [pageWrapperClass, setPageWrapperClass] = useState("page-wrapper1");
+
+
+
+  const scrollPrev = () => {
+    const container = scrollContainerRef.current;
+    if (container) {
+      container.scrollLeft -= container.offsetWidth;
+      setIsAtStart(container.scrollLeft <= 0);
+      setIsAtEnd(false); 
+      setShowTitle(true);
+    }
+    setPageWrapperClass("page-wrapper1");
+
+  };
+  
+  const scrollNext = () => {
+    const container = scrollContainerRef.current;
+    if (container) {
+      container.scrollLeft += container.offsetWidth;
+      setIsAtEnd(container.scrollWidth <= container.scrollLeft + container.offsetWidth);
+      setIsAtStart(false); 
+      setShowTitle(false);
+    }
+    setPageWrapperClass("page-wrapper2");
+  
+  };
+  
+  
+
+
+  return (
+    <div className={pageWrapperClass}>
+      <div className="container">
+      <div className={`title ${showTitle ? '' : 'hide-title'}`}>&lt; / Trending Now &gt;</div>
+        { !isAtStart && (
+          <button
+            onClick={scrollPrev}
+            className="button-default button-left"
+          >
+            <img src="/Vector left.png" alt="Left" />
+          </button>
+        )}
+        <div ref={scrollContainerRef} className="card-container">
+          <CourseCard1 />
+          <CourseCard2 />
+          <CourseCard3 />
+          <CourseCard4 />
+        </div>
+        { !isAtEnd && (
+          <button
+            onClick={scrollNext}
+            className="button-default button-right"
+          >
+            <img src="/Vector 116.png" alt="Left" />
+          </button>
+        )}
+      </div>
+    </div>
   );
+  
 }
+
+
+
+
+
+
