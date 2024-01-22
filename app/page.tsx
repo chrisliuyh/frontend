@@ -103,7 +103,7 @@ const CourseCard4 = () => (
 
 
 export default function Home() {
-  const scrollContainerRef = useRef(null);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [isAtEnd, setIsAtEnd] = useState(false);
   const [isAtStart, setIsAtStart] = useState(true);
   const [showTitle, setShowTitle] = useState(true);
